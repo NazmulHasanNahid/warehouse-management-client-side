@@ -7,6 +7,7 @@ import Footer from "./components/pages/Shared/Footer/Footer";
 import Header from "./components/pages/Shared/Header/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Products from "./components/pages/Inventory/Products";
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
      <Routes>
        <Route path="/" element={<Home/>}/>
        <Route path="/home" element={<Home/>}/>
+       <Route path="/products" element={<Products/>}/>
        <Route path="/login" element={<Login/>}/>
        <Route path="/register" element={<Register/>}/>
        <Route path="*" element={<NotFound/>}/>
      </Routes>
      <Footer/>
      <ToastContainer />
-    </div>
+  </div>
   );
 }
 

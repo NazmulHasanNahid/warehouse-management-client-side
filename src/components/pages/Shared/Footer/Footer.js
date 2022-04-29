@@ -22,8 +22,8 @@ const Footer = () => {
                 </div>
                 </Col>
                 <Col>
-                <h5 className='fw-bold'>Helpful Links</h5>
-                <div>
+                <h5 className='fw-bold'>Helpful Links</h5> 
+                <div> 
                 <p>Services</p>
                 <p>Supports</p>
                 <p>Terms And Condition</p>
@@ -48,7 +48,7 @@ const Footer = () => {
                     <p><BsWhatsapp  className='mx-3'/>01646170993</p>
                     </div>
                 </Col>
-           </Row>
+           </Row> <hr />
                 <p className='text-center text-secondary mt-3'>Nh-Official © 2022 all rights reserved</p>
           </div>
           </div>
