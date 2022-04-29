@@ -1,8 +1,15 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../Auth/firebase/firebase.init";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const handleLogout =  () =>{
+    signOut(auth)
+  }
   return (
     <div>
       <Navbar bg="light" expand="lg">

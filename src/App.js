@@ -5,7 +5,7 @@ import Home from "./components/pages/Home/Home";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Footer from "./components/pages/Shared/Footer/Footer";
 import Header from "./components/pages/Shared/Header/Header";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
