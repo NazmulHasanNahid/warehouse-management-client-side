@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword  , useUpdateProfile} from 'react-firebase-hooks/auth';
 import { Link } from "react-router-dom";
 import { BsEyeFill } from "react-icons/bs";
 import auth from "../firebase/firebase.init";
 import { async } from "@firebase/util";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+
+
 
 
 
@@ -33,9 +35,14 @@ const Register = () => {
           e.preventDefault()
           createUserWithEmailAndPassword(email , password)
           await updateProfille({displayName:name})
-          e.reset()
+         
 
      }
+     useEffect(() => {
+          if (error) {
+            toast(error?.message);
+          }
+        }, [error]);
   return (
     <div>
       <form onSubmit={createAccount}>
@@ -104,6 +111,7 @@ const Register = () => {
                     value="Sign Up"
                   />
                 </div>
+              
               </div>
             </div>
           </div>
