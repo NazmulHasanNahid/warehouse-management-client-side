@@ -1,5 +1,5 @@
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -69,6 +69,12 @@ const Login = () => {
         if (user) {
           navigate(from, { replace: true });
         }
+        useEffect(()=>{
+          if(error){
+            toast(error?.message)
+           
+          }
+        },[error])
   return (
     <div>
       <form onSubmit={handleCreateAccount}>
@@ -100,13 +106,10 @@ const Login = () => {
                  {errors?.password && (
                   <p className="text-danger my-3 fw-bold">{errors?.password}</p>
                 )}
+               <p>Forget Password? <button className="btn btn-link text-primary pe-auto text-decoration-none" onClick={handleResetPassword}>Reset Password</button></p> 
 
-                <p>
-                  Forget Password?{" "}
-                  <button className="btn btn-link text-primary pe-auto text-decoration-none" onClick={handleResetPassword}>
-                    Reset Password
-                  </button>
-                </p>
+               
+                
               </div>
 
               <div className="form-field col-lg-12">
