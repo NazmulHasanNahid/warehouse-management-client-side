@@ -9,7 +9,7 @@ import './Footer.css'
 
 const Footer = () => {
      return (
-          <div className='fixed-bottom'>
+          <div >
                 <div className='footer-bg mt-5 p-5'>
            <Row  xs={1} md={4} className="w-75 mx-auto container">
                 <Col>
