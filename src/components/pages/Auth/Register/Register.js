@@ -1,48 +1,84 @@
 import React, { useEffect, useState } from "react";
-import { useCreateUserWithEmailAndPassword  , useUpdateProfile} from 'react-firebase-hooks/auth';
-import { Link } from "react-router-dom";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill } from "react-icons/bs";
 import auth from "../firebase/firebase.init";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 
-
-
-
-
 const Register = () => {
-     const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
-     const [updateProfille , updating , profileError] = useUpdateProfile(auth)
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfille, updating, profileError] = useUpdateProfile(auth);
 
-     const [showPassword , setShowPassword] = useState(false);
-     const [name , setName] = useState("")
-     const [email , setEmail] = useState("")
-     const [password , setPassword] = useState("")
-     const [confirmPassword , setConfirmPassword] = useState("")
-     const handleName = e =>{
-          setName(e.target.value)
-     }
-     const handleEmail = e =>{
-          setEmail(e.target.value)
-     }
-     const handlePassword = e =>{
-          setPassword(e.target.value)
-     }
-     const handleConfirmPassword = e =>{
-          setConfirmPassword(e.target.value)
-     }
-     const createAccount =   async e =>{
-          e.preventDefault()
-          createUserWithEmailAndPassword(email , password)
-          await updateProfille({displayName:name})
-         
-
-     }
-     useEffect(() => {
-          if (error) {
-            toast(error?.message);
-          }
-        }, [error]);
+  const [showPassword, setShowPassword] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const handleName = (e) => {
+    setUserInfo({ ...userInfo, name: e.target.value });
+  };
+  const handleEmail = (e) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    const validEmail = emailRegex.test(e.target.value);
+    if (validEmail) {
+      setUserInfo({ ...userInfo, email: e.target.value });
+      setErrors({ ...errors, email: "" });
+    } else {
+      setErrors({ ...errors, email: "Invalid Email" });
+    }
+  };
+  const handlePassword = (e) => {
+    // setPassword(e.target.value)
+    const passwordRegex = /.{6}/;
+    const validPassword = passwordRegex.test(e.target.value);
+    if (validPassword) {
+      setUserInfo({ ...userInfo, password: e.target.value });
+      setErrors({ ...errors, password: "" });
+    } else {
+      setErrors({
+        ...errors,
+        password: "Password Must Be  contain 6 characters",
+      });
+    }
+  };
+  const handleConfirmPassword = (e) => {
+    if (e.target.value === userInfo.password) {
+      setUserInfo({ ...userInfo, confirmPassword: e.target.value });
+      setErrors({ ...errors, password: "" });
+    } else {
+      setErrors({ ...errors, password: "Password Don't Match" });
+      setUserInfo({ ...userInfo, confirmPassword: "" });
+    }
+  };
+  const createAccount = async (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+    await updateProfille({ displayName: userInfo.name });
+  };
+  useEffect(() => {
+    if (error) {
+      toast(error?.message);
+    }
+  }, [error]);
+  const navigate = useNavigate()
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  console.log(location);
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div>
       <form onSubmit={createAccount}>
@@ -66,19 +102,25 @@ const Register = () => {
                   className="input-text"
                   type="email"
                   name="email"
-                  onChange={handleEmail }
+                  onChange={handleEmail}
                   placeholder="Enter Your Email"
                 />
+                {errors?.email && (
+                  <p className="text-danger my-3 fw-bold">{errors?.email}</p>
+                )}
               </div>
               <div className="form-field col-lg-6">
                 <input
                   required
                   className="input-text"
                   name="password"
-                  onChange={ handlePassword}
+                  onChange={handlePassword}
                   placeholder="Password"
                   type={showPassword ? "text" : "password"}
                 />
+                {errors?.password && (
+                  <p className="text-danger my-3 fw-bold">{errors?.password}</p>
+                )}
               </div>
               <div className="form-field col-lg-6">
                 <input
@@ -89,6 +131,11 @@ const Register = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm Password"
                 />
+                {errors?.confirmPassword && (
+                  <p className="text-danger my-3 fw-bold">
+                    {errors?.confirmPassword}
+                  </p>
+                )}
               </div>
               <p className="">
                 {
@@ -111,7 +158,6 @@ const Register = () => {
                     value="Sign Up"
                   />
                 </div>
-              
               </div>
             </div>
           </div>
