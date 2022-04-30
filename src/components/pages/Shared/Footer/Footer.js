@@ -15,10 +15,10 @@ const Footer = () => {
                 <Col>
                 <h5 className='fw-bold'>Information</h5>
                 <div>
-                     <p>About My Service</p>
-                     <p>More Search</p>
-                     <p>Blog</p>
-                     <p>Testimonial</p>
+                     <p>About Our Warehouse</p>
+                     <p>Electronics</p>
+                     <p>Products Import</p>
+                     <p>Products Export</p>
                 </div>
                 </Col>
                 <Col>
@@ -31,12 +31,12 @@ const Footer = () => {
                 </div>
                 </Col>
                 <Col>
-                <h5 className='fw-bold'>My Services</h5>
+                <h5 className='fw-bold'>Products</h5>
                 <div>
-                     <p>Travel Guide</p>
-                     <p>Tour Plan</p>
-                     <p>Guide</p>
-                     <p>Support 24/7</p>
+                     <p>Electronics Item</p>
+                     <p>Tv / Freeze</p>
+                     <p>Ac / Electric Oven </p>
+                     <p>Water Filter / Electric Kettle</p>
                 </div>
                 </Col>
                 <Col>
