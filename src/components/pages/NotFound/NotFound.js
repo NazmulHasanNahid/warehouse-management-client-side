@@ -1,10 +1,11 @@
 import React from 'react';
+import errorImg from '../../../img/404.jpg'
 
 const NotFound = () => {
      return (
           <div className='text-center'>
-              <h1 className='text-danger fw-bold display-1'>404</h1> 
-              <p>This Page Doesn't Exist ..!</p>
+               <img src={errorImg} alt="" />
+             
           </div>
      );
 };
