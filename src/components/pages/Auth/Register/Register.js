@@ -8,6 +8,7 @@ import { BsEyeFill } from "react-icons/bs";
 import auth from "../firebase/firebase.init";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -75,7 +76,6 @@ const Register = () => {
   const navigate = useNavigate()
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  console.log(location);
   if (user) {
     navigate(from, { replace: true });
   }
@@ -157,6 +157,7 @@ const Register = () => {
                     name=""
                     value="Sign Up"
                   />
+                  <SocialLogin/>
                 </div>
               </div>
             </div>
