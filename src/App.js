@@ -7,7 +7,8 @@ import Footer from "./components/pages/Shared/Footer/Footer";
 import Header from "./components/pages/Shared/Header/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Products from "./components/pages/Inventory/Products";
+import Products from "./components/pages/Products/Products";
+import Inventory from "./components/pages/Inventory/Inventory";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
        <Route path="/" element={<Home/>}/>
        <Route path="/home" element={<Home/>}/>
        <Route path="/products" element={<Products/>}/>
+       <Route path="/inventory/:id" element={<Inventory/>}/>
        <Route path="/login" element={<Login/>}/>
        <Route path="/register" element={<Register/>}/>
        <Route path="*" element={<NotFound/>}/>
