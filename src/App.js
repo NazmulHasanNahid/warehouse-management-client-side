@@ -11,6 +11,7 @@ import Products from "./components/pages/Products/Products";
 import Inventory from "./components/pages/Inventory/Inventory";
 import RequireAuth from "./components/pages/Auth/RequireAuth/RequireAuth";
 import AllProducts from "./components/pages/AllProducts/AllProducts";
+import AddProduct from "./components/pages/Inventory/AddProduct";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        <Route path="/" element={<Home/>}/>
        <Route path="/home" element={<Home/>}/>
        <Route path="/products" element={<Products/>}/>
+       <Route path="/addItem" element={<AddProduct/>}/>
        <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
        <Route path="/allProducts" element={<AllProducts/>}/>
        <Route path="/login" element={<Login/>}/>

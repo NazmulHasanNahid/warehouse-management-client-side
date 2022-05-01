@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data , e) => {
-    const url = `https://limitless-springs-85910.herokuapp.com/products`;
+  const onSubmit = (data ,e) => {
+    const url = `http://localhost:5000/products`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -15,16 +15,15 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-       e.target.reset()
-      
-    
         toast("Product Added");
+        e.target.reset()
+        toast('product added')
         
       });
   };
 
   return (
-    <div>
+    <div className="w-50 mx-auto mt-5">
       <h3 className="text-center fw-bold text-secondary">Add Products</h3>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
