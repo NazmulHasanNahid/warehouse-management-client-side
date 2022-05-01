@@ -1,13 +1,11 @@
-import React from "react";
-import { Button, Card, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Card, Col } from 'react-bootstrap';
 
-
-const ShowProducts = ({ product }) => {
-  const { name, description, img, price, quantity, supliarname , _id} = product;
-  return (
-    <div>
-      <Col >
+const ShowAllProducts = ({product}) => {
+     const { name, description, img, price, quantity, supliarname , _id} = product;
+     return (
+          <div>
+               <Col >
         <Card> 
           <Card.Img height={300} className=" img-fuild " variant="top" src={img}  />
          
@@ -26,14 +24,13 @@ const ShowProducts = ({ product }) => {
             supliarname : {supliarname}
             </Card.Text>
           </Card.Body>
-          <Link to={`/inventory/${_id}`} >
+          {/* <Link to={`/inventory/${_id}`} >
           <Button  variant="primary">Update</Button>
-          </Link>
+          </Link> */}
         </Card>
       </Col>
-      
-    </div>
-  );
+          </div>
+     );
 };
 
-export default ShowProducts;
+export default ShowAllProducts;

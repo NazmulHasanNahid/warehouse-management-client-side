@@ -52,6 +52,7 @@ const Inventory = () => {
               <Card.Title>{products.name}</Card.Title>
               <Card.Text>{products.description}</Card.Text>
               <Card.Text>Quantity : {products.quantity}</Card.Text>
+              <Card.Text>Supliarname : {products.supliarname}</Card.Text>
             </Card.Body>
 
             <Button

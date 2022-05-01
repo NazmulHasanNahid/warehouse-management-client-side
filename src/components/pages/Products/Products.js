@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
+import useProducts from '../../hooks/useProducts';
 import ShowProducts from './ShowProducts';
 
 const Products = () => {
-     const [products , setProducts] = useState([])
-     useEffect(()=>{
-          fetch('https://limitless-springs-85910.herokuapp.com/products')
-            .then(res=> res.json())
-            .then(data => setProducts(data))
-     },[])
+     const [products , setProducts] = useProducts([])
      return (
           <div>
                <h2 className='text-center text-secondary fw-bold  my-5'>Products <br /> ____</h2>
