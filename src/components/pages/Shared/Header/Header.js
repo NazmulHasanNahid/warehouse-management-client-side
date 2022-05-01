@@ -14,7 +14,7 @@ const Header = () => {
   }
   return (
     <div >
-      <Navbar bg="light" fixed="top" expand="lg">
+      <Navbar bg="light"  expand="lg">
         <Container>
           <Navbar.Brand href="#home">NH Electronics</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +26,6 @@ const Header = () => {
              {user &&  <Nav.Link  as={Link} to="/AddItem">Add Item</Nav.Link>}
              {user && <Nav.Link  as={Link} to="/myItem">My Item</Nav.Link>}
 
-              
              
               {user ? <Nav.Link className="fw-bold " onClick={handleLogout}>LogOut</Nav.Link> :<Nav.Link className="fw-bold " as={Link} to="/login ">Login</Nav.Link>}
             { user && <Nav.Link className="fw-bold " as={Link} to=""><FaUser/>{user?.email}</Nav.Link>}

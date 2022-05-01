@@ -16,25 +16,25 @@ const Inventory = () => {
   }, []);
 
 
-  const handleDelet = (id) => {
-    const proceed = window.confirm("Are you sure This is deliverd?");
-    if (proceed) {
-      const url = `http://localhost:5000/products/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          // if(data.deletedCount){
-          // }
-          console.log(data);
-          const remaining = products.filter((product) => product._id !== id);
-          setProducts(remaining);
-          toast('Your Delivery Successful')
+  // const handleDelet = (id) => {
+  //   const proceed = window.confirm("Are you sure This is deliverd?");
+  //   if (proceed) {
+  //     const url = `http://localhost:5000/product/${id}`;
+  //     fetch(url, {
+  //       method: "DELETE",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         // if(data.deletedCount){
+  //         // }
+  //         console.log(data);
+  //         const remaining = products.filter((product) => product._id !== id);
+  //         setProducts(remaining);
+  //         toast('Your Delivery Successful')
          
-        });
-    }
-  };
+  //       });
+  //   }
+  // };
 
   return (
     <div className="container ">
@@ -55,12 +55,12 @@ const Inventory = () => {
               <Card.Text>Supliarname : {products.supliarname}</Card.Text>
             </Card.Body>
 
-            <Button
+            {/* <Button
               onClick={() => handleDelet(products._id)}
               variant="primary mb-2"
             >
               Deliverd
-            </Button>
+            </Button> */}
           </Card> 
         </Col>
         <Col>
