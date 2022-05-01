@@ -13,8 +13,8 @@ const Header = () => {
     signOut(auth)
   }
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
+    <div >
+      <Navbar bg="light" fixed="top" expand="lg">
         <Container>
           <Navbar.Brand href="#home">NH Electronics</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

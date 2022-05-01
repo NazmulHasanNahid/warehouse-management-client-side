@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase/firebase.init';
+import Loading from '../../Shared/Loading/Loading'
 
 const SocialLogin = () => {
 
@@ -14,6 +15,9 @@ const SocialLogin = () => {
 
       if (user) {
         navigate(from, { replace: true });
+      }
+      if(loading){
+            <Loading/>
       }
      return (
           <div className='ms-3'>

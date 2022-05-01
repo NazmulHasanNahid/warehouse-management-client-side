@@ -1,0 +1,22 @@
+[debug] [2022-04-30T15:26:19.909Z] ----------------------------------------------------------------------
+[debug] [2022-04-30T15:26:19.911Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nahid\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-30T15:26:19.911Z] CLI Version:   10.6.0
+[debug] [2022-04-30T15:26:19.911Z] Platform:      win32
+[debug] [2022-04-30T15:26:19.911Z] Node Version:  v16.14.2
+[debug] [2022-04-30T15:26:19.912Z] Time:          Sat Apr 30 2022 21:26:19 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-30T15:26:19.912Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-30T15:26:19.973Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-30T15:26:19.973Z] > authorizing via signed-in user (nh.nahid4491@gmail.com)
+[debug] [2022-04-30T15:26:19.973Z] [iam] checking project warehouse-bb4ea for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-30T15:26:19.975Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/warehouse-bb4ea:testIamPermissions [none]
+[debug] [2022-04-30T15:26:19.975Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/warehouse-bb4ea:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-30T15:26:21.598Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/warehouse-bb4ea:testIamPermissions 200
+[debug] [2022-04-30T15:26:21.599Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/warehouse-bb4ea:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-30T15:26:21.600Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/warehouse-bb4ea [none]
+[debug] [2022-04-30T15:26:21.790Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/warehouse-bb4ea
+[debug] [2022-04-30T15:26:22.739Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/warehouse-bb4ea
+    at RetryOperation._fn (C:\Users\Nahid\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:240:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project warehouse-bb4ea. Please make sure the project exists and your account has permission to access it.
