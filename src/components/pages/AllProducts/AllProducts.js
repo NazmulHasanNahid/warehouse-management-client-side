@@ -19,7 +19,7 @@ const AllProducts = () => {
           console.log(data);
           const remaining = products.filter((product) => product._id !== id);
           setProducts(remaining);
-          toast('Your Delivery Successful')
+          toast('Your Product Deleted')
          
         });
     }

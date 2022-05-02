@@ -1,9 +1,10 @@
 import { Button, Col, Row } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import AddProduct from "./AddProduct";
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const Inventory = () => {
   const { id } = useParams({});
@@ -14,28 +15,8 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
-
-  // const handleDelet = (id) => {
-  //   const proceed = window.confirm("Are you sure This is deliverd?");
-  //   if (proceed) {
-  //     const url = `http://localhost:5000/product/${id}`;
-  //     fetch(url, {
-  //       method: "DELETE",
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         // if(data.deletedCount){
-  //         // }
-  //         console.log(data);
-  //         const remaining = products.filter((product) => product._id !== id);
-  //         setProducts(remaining);
-  //         toast('Your Delivery Successful')
-         
-  //       });
-  //   }
-  // };
-
+  
+  
   return (
     <div className="container ">
       <h2 className="text-center fw-bold my-5 text-secondary">Manage Inventory <br /> ______ </h2>
@@ -55,18 +36,29 @@ const Inventory = () => {
               <Card.Text>Supliarname : {products.supliarname}</Card.Text>
             </Card.Body>
 
-            {/* <Button
-              onClick={() => handleDelet(products._id)}
+            <Button
+             
               variant="primary mb-2"
             >
               Deliverd
-            </Button> */}
+            </Button>
           </Card> 
         </Col>
         <Col>
-          <AddProduct />
+       <h3>Add New Stock</h3>
+       <form>
+         <input type="number" />
+         <input type="submit" value="Add" />
+       </form>
         </Col>
       </Row>
+      <div className="text-center my-5">
+
+      <Link to="/allProducts">
+      <Button>Manage Inventory</Button>
+      </Link>
+      </div>
+    
     </div>
   );
 };

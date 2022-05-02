@@ -10,7 +10,7 @@ const Products = () => {
                <h2 className='text-center text-secondary fw-bold  my-5'>Products <br /> ____</h2>
                <Row xs={1} md={3} className="g-5  container mx-auto ">
                     {
-                         products.map(product => <ShowProducts product={product} key={product._id}></ShowProducts>)
+                         products.slice(0,6).map(product => <ShowProducts product={product} key={product._id}></ShowProducts>)
                     }
                </Row>
           </div>
