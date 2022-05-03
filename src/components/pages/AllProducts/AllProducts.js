@@ -28,16 +28,16 @@ const AllProducts = () => {
   
   return (
     <div>
-      <h2 className="text-center mt-5">All Products</h2>
-      <Row xs={1} md={3} className="g-5  container mx-auto ">
+      <h2 className="text-center mt-5">Total Products :  {products.length}</h2>
+      <Row xs={1} md={1} className="g-5  container mx-auto ">
         {products.map((product) => (
-          <div>
-            <ol>
-                                   <li>{product.name} <button onClick={() => handleDelet(product._id)}  >x</button></li>
-                                   
-          </ol>
           
-          </div>
+          <p className="border">{product.name} <button onClick={() => handleDelet(product._id)}  >x</button></p>
+                                 
+                                   
+         
+          
+          
         ))}
       </Row>
     </div>

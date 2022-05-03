@@ -1,7 +1,11 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import auth from "../Auth/firebase/firebase.init";
 const AddProduct = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data ,e) => {
@@ -15,7 +19,6 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        toast("Product Added");
         e.target.reset()
         toast('product added')
         
@@ -29,17 +32,24 @@ const AddProduct = () => {
         <input
           className="mb-2"
           placeholder="Name"
-          {...register("name", { required: true, maxLength: 20 })}
+          {...register("name", { required: true})}
         />
         <input
           className="mb-2"
+          placeholder="Email"
+          type="email"
+          {...register("email", { required: true})}
+        />
+       
+        <input
+          className="mb-2"
           placeholder="Quantity"
-          {...register("quantity", { required: true, maxLength: 20 })}
+          {...register("quantity", { required: true})}
         />
         <input
           className="mb-2"
           placeholder="supliarname"
-          {...register("supliarname", { required: true, maxLength: 20 })}
+          {...register("supliarname", { required: true})}
         />
         <textarea
           className="mb-2"
