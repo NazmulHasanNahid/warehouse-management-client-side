@@ -37,7 +37,10 @@ const AddProduct = () => {
         <input
           className="mb-2"
           placeholder="Email"
+          readOnly
+          value={user.email}
           type="email"
+         
           {...register("email", { required: true})}
         />
        
