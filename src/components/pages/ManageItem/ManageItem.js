@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AllProducts from '../AllProducts/AllProducts';
 
 const ManageItem = () => {
      return (
           <div className='text-center my-5'>
-               <Link to="/addItem">
-              <button >Add New Item</button>
-               </Link>
+               <AllProducts/>
                
           </div>
      );
