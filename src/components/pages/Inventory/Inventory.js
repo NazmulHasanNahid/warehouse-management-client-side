@@ -17,26 +17,7 @@ const Inventory = () => {
 
 
 
-  
-  // const handleDeliverd = () =>{
-  //     const newQuantity = parseInt(products.quantity) - 1 ;
-  //     const {productQuantity} = newQuantity ;
-  //     const url = `http://localhost:5000/quantity/${id}`;
-  //     fetch(url, {
-  //       method: "PUT",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //     body: JSON.stringify(productQuantity),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((result) => {
-  //         setProducts({...result , products.quantity : newQuantity} )
-  //         toast('Products Deliverd')
-          
-  //       });
-  
-  // }
+
   const handleDeliverd = () =>{
     let quantity = products?.quantity;
     quantity = parseInt(quantity) -1;
