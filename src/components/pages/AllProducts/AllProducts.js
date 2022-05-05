@@ -31,6 +31,7 @@ const AllProducts = () => {
           <thead>
             <tr>
               <th className="text-center text-secondary">Products Name</th>
+              <th className="text-center text-secondary">Img</th>
               <th className="text-center text-secondary">Price</th>
               <th className="text-center text-secondary">Supliar Name</th>
               <th className="text-center text-secondary">Quantity</th>
@@ -41,6 +42,7 @@ const AllProducts = () => {
             {products.map((pd) => (
               <tr key={pd._id}>
                 <td className="text-center">{pd.name}</td>
+                <td className="text-center"><img className="img-fluid" width="40px" src={pd.img} alt="" /></td>
                 <td className="text-center">{pd.price}</td>
                 <td className="text-center"> {pd.supliarname} </td>
                 <td className="text-center"> {pd.quantity} </td>
@@ -51,9 +53,12 @@ const AllProducts = () => {
                   <Button variant="secondary" className="" onClick={() => handleDelet(pd._id)}>Delete</Button>
                   </div>
                 </td>
+                
               </tr>
+
             ))}
           </tbody>
+          
         </Table>
         <div className="text-center">
         <Link to="/addItem">

@@ -3,6 +3,7 @@ import React, { Children, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import updateImg from "../../../img/update.png";
 
 const Inventory = () => {
   const { id } = useParams();
@@ -73,57 +74,48 @@ const Inventory = () => {
       <h2 className="text-center fw-bold my-5 text-secondary">
         Manage Inventory <br /> ______{" "}
       </h2>
-      <Row
-        xs={1}
-        md={2}
-        className="g-5 d-flex align-items-center container mx-auto "
-      >
+      <Row xs={1} md={2} className="g-4">
         <Col>
-          <Card>
+          <Card className="border-0  shadow-lg">
             <Card.Img
-              height={300}
+              height={400}
               className=" img-fuild "
               variant="top"
-              src={products.img}
+              src={products?.img}
             />
-            <Card.Body>
-              <Card.Title>{products.name}</Card.Title>
-              <Card.Text>{products.description}</Card.Text>
-              <Card.Text>Quantity : {products.quantity}</Card.Text>
-              <Card.Text>Supliarname : {products.supliarname}</Card.Text>
+            <Card.Body className="shadow-lg ">
+              <Card.Title> <span className="text-secondary fw-bold">{products?.name}</span> </Card.Title>
+              <Card.Text> <span className="text-secondary">{products.description?.slice(0, 100)}</span> </Card.Text>
+              <Card.Text> <span className="text-secondary">Price : {products?.price}</span> </Card.Text>
+              <Card.Text> <span className="text-secondary">Quantity : {products?.quantity}</span> </Card.Text>
+              <Card.Text> <span className="text-secondary">Supliarname : {products?.supliarname}</span> </Card.Text>
             </Card.Body>
 
-            <Button onClick={handleDeliverd} variant="primary mb-2">
+            <Button onClick={handleDeliverd} variant="secondary ">
               Deliverd
             </Button>
           </Card>
         </Col>
-        <Col>
-          <h5 className="text-secondary my-3">Update Quantity</h5>
-          {/* <form onSubmit={handleUpdateQuantity}>
-            <input type="number" name="quantity" />
-            <input type="submit" value="Add" />
-          </form> */}
+        <Col className="shadow-lg">
+          <h5 className="text-secondary my-3 text-center">
+            Update Quantity <br /> _______
+          </h5>
+         <div className="w-50 mx-auto"> <img className="img-fluid" src={updateImg} alt="" /></div>
           <form onSubmit={handleUpdateQuantity}>
             <div class="form-group">
-              <input
-                type="number"
-                class="form-control"
-                name="quantity"
-              />
+              <input placeholder="Enter Your Quantity" type="number" class="form-control" name="quantity" />
             </div>
             <button type="submit" class="btn btn-secondary mt-3">
-              Submit
+              Update
             </button>
           </form>
           <div className="my-3">
-        <Link to="/allProducts">
-          <Button variant="secondary">Manage Inventory</Button>
-        </Link>
-      </div>
+            <Link to="/allProducts">
+              <Button variant="secondary">Manage Inventory</Button>
+            </Link>
+          </div>
         </Col>
       </Row>
-     
     </div>
   );
 };

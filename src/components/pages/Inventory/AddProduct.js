@@ -48,6 +48,7 @@ const AddProduct = () => {
           className="mb-2"
           placeholder="Quantity"
           {...register("quantity", { required: true})}
+          type="number"
         />
         <input
           className="mb-2"
