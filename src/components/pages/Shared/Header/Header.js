@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../Auth/firebase/firebase.init";
 import { FaUser } from 'react-icons/fa';
+import logo from  '../../../../img/logo.png'
 
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <div >
       <Navbar bg="light"  expand="lg">
         <Container>
-          <Navbar.Brand href="#home">NH Electronics</Navbar.Brand>
+          <Navbar.Brand href="#home"> <img width="40px" src={logo} alt="" /> <span className="fw-bold text-secondary">Electronics</span> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

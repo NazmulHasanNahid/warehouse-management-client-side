@@ -33,6 +33,7 @@ const AllProducts = () => {
               <th className="text-center text-secondary">Products Name</th>
               <th className="text-center text-secondary">Price</th>
               <th className="text-center text-secondary">Supliar Name</th>
+              <th className="text-center text-secondary">Quantity</th>
               <th className="text-center text-secondary">Delete</th>
             </tr>
           </thead>
@@ -42,8 +43,9 @@ const AllProducts = () => {
                 <td className="text-center">{pd.name}</td>
                 <td className="text-center">{pd.price}</td>
                 <td className="text-center"> {pd.supliarname} </td>
+                <td className="text-center"> {pd.quantity} </td>
                 <td>
-                  {" "}
+                  
                   <div className="text-center">
 
                   <Button variant="secondary" className="" onClick={() => handleDelet(pd._id)}>Delete</Button>

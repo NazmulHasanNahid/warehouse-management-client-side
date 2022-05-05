@@ -1,5 +1,5 @@
 import { Button, Col, Row } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,39 +7,67 @@ import { toast } from "react-toastify";
 const Inventory = () => {
   const { id } = useParams();
   const [products, setProducts] = useState({});
+  console.log(products);
   useEffect(() => {
     const url = `http://localhost:5000/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [id, products]);
 
-
-
-
-
-  const handleDeliverd = () =>{
+  const handleDeliverd = (e) => {
+    e.preventDefault();
     let quantity = products?.quantity;
-    quantity = parseInt(quantity) -1;
-    if(quantity<0){
-      return alert('Quantity can not be less then zero')
+    quantity = parseInt(quantity) - 1;
+    if (quantity < 0) {
+      return alert("Quantity can not be less then zero");
     }
-    const url = `http://localhost:5000/quantity/${id}`
-    fetch(url , {
-      method:'PUT' ,
-      headers:{
-        'content-type':'application/json'
+
+    const url = `http://localhost:5000/quantity/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify({quantity})
-    
+      body: JSON.stringify({ quantity }),
     })
-    .then((res)=>res.json())
-    .then((data)=>{
-      console.log(data);
-      setProducts({...data , quantity:quantity})
-    })
-  }
-  
+      .then((res) => res.json())
+
+      .then((data) => {
+        setProducts({ ...data, quantity: quantity });
+        toast("Successfully Deliverd");
+      });
+  };
+
+  const handleUpdateQuantity = (e) => {
+    e.preventDefault();
+    let quantity = products?.quantity;
+    const addQuantity = parseInt(e.target.quantity.value);
+    if (addQuantity > 0) {
+      quantity = parseInt(quantity) + addQuantity;
+      const updateInventory = { quantity };
+      const url = `http://localhost:5000/quantity/${id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateInventory),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          toast("Quantity Updated");
+          e.target.reset();
+        })
+        .catch((err) => console.log(err));
+    } else {
+      alert("please insert positive number of quantity");
+      e.target.reset();
+      return;
+    }
+  };
+
   return (
     <div className="container ">
       <h2 className="text-center fw-bold my-5 text-secondary">
@@ -65,22 +93,37 @@ const Inventory = () => {
               <Card.Text>Supliarname : {products.supliarname}</Card.Text>
             </Card.Body>
 
-            <Button onClick={handleDeliverd} variant="primary mb-2">Deliverd</Button>
+            <Button onClick={handleDeliverd} variant="primary mb-2">
+              Deliverd
+            </Button>
           </Card>
         </Col>
         <Col>
-          <h3>Add New Stock</h3>
-          <form >
+          <h5 className="text-secondary my-3">Update Quantity</h5>
+          {/* <form onSubmit={handleUpdateQuantity}>
             <input type="number" name="quantity" />
-            <input  type="submit" value="Add" />
+            <input type="submit" value="Add" />
+          </form> */}
+          <form onSubmit={handleUpdateQuantity}>
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                name="quantity"
+              />
+            </div>
+            <button type="submit" class="btn btn-secondary mt-3">
+              Submit
+            </button>
           </form>
-        </Col>
-      </Row>
-      <div className="text-center my-5">
+          <div className="my-3">
         <Link to="/allProducts">
-          <Button>Manage Inventory</Button>
+          <Button variant="secondary">Manage Inventory</Button>
         </Link>
       </div>
+        </Col>
+      </Row>
+     
     </div>
   );
 };
