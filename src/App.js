@@ -16,6 +16,7 @@ import MyItem from "./components/pages/ManageItem/MyItem";
 import ManageItem from "./components/pages/ManageItem/ManageItem";
 import Blog from "./components/pages/Blog/Blog";
 import AllCategories from "./components/pages/Categories/AllCategories";
+import AddCategory from "./components/pages/Categories/AddCategory";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
        <Route path="/myItem" element={<MyItem/>}/>
        <Route path="/blog" element={<Blog/>}/>
        <Route path="/allCategories" element={<AllCategories/>}/>
+       <Route path="/addCategory" element={<AddCategory/>}/>
        <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
        <Route path="/allProducts" element={<AllProducts/>}/>
        <Route path="/login" element={<Login/>}/>

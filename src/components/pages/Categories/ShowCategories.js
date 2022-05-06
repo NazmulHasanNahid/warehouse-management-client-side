@@ -15,6 +15,7 @@ const ShowCategories = ({categorie}) => {
             </div>
             
           </Col>
+          
          
           </div>
      );

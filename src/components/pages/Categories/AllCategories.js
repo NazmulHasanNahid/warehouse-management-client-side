@@ -1,5 +1,7 @@
+import { Button } from 'react-bootstrap';
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useCategories from '../../hooks/useCategories';
 import ShowAllCategories from './ShowAllCategories';
 
@@ -14,6 +16,11 @@ const AllCategories = () => {
                  categories.map(categorie => <ShowAllCategories key={categorie._id} categorie={categorie} ></ShowAllCategories>)
             }
             </Row>
+            <div className='text-center my-5'>
+            <Link to="/addCategory">
+            <Button  variant="outline-secondary">Add Category</Button>
+            </Link>
+            </div>
           </div>
      );
 };
