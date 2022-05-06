@@ -34,6 +34,7 @@ const ShowProducts = ({ product }) => {
         </Card.Body>
       </Card>
     </Col>
+     
     </div>
   );
 };

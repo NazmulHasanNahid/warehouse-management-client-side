@@ -15,6 +15,7 @@ import AddProduct from "./components/pages/Inventory/AddProduct";
 import MyItem from "./components/pages/ManageItem/MyItem";
 import ManageItem from "./components/pages/ManageItem/ManageItem";
 import Blog from "./components/pages/Blog/Blog";
+import AllCategories from "./components/pages/Categories/AllCategories";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
        <Route path="/manageItem" element={<ManageItem/>}/>
        <Route path="/myItem" element={<MyItem/>}/>
        <Route path="/blog" element={<Blog/>}/>
+       <Route path="/allCategories" element={<AllCategories/>}/>
        <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
        <Route path="/allProducts" element={<AllProducts/>}/>
        <Route path="/login" element={<Login/>}/>
