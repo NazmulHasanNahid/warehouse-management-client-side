@@ -1,22 +1,17 @@
+import { Carousel } from 'react-bootstrap';
 import React from 'react';
 import { Col, Row } from "react-bootstrap";
 import {
-  Area,
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ComposedChart,
-  Legend,
-  Line,
-  LineChart,
+  
   Pie,
   PieChart,
-  XAxis,
-  YAxis,
+  
   ResponsiveContainer
 } from "recharts";
+import useProducts from '../../hooks/useProducts';
 
 const ProductsDetail = () => {
+     const [products , setProducts] = useProducts()
      const chartData = [
           {
             month: "Mar",
@@ -57,8 +52,8 @@ const ProductsDetail = () => {
         ];
       
      return (
-          <div>
-            <div className='border container text-center'>
+          <div className='container '>
+            <div className='border  text-center shadow-lg p-3 my-5'>
           <p className='text-center my-3 text-secondary fw-bold'>Stock Summary</p> <hr />
 
           <Row xs={1} md={2} className="d-flex align-items-center ">
@@ -87,6 +82,7 @@ const ProductsDetail = () => {
             </ResponsiveContainer>
             </Col>
           </Row>
+         
             </div>
 
 

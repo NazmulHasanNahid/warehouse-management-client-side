@@ -1,5 +1,5 @@
 import { Button, Col, Row } from "react-bootstrap";
-import React, { Children, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -84,15 +84,43 @@ const Inventory = () => {
               src={products?.img}
             />
             <Card.Body className="shadow-lg bg-secondary rounded">
-              <Card.Title> <span className="text-white fw-bold">{products?.name}</span> </Card.Title>
-              <Card.Text> <span className="text-white">{products.description?.slice(0, 100)}</span> </Card.Text>
-              <Card.Text> <span className="text-white">Price : {products?.price}</span> </Card.Text>
-              <Card.Text> <span className="text-white">Quantity : {products?.quantity}</span> </Card.Text>
-              <Card.Text> <span className="text-white">Supliarname : {products?.supliarname}</span> </Card.Text>
-            <Button className="w-100" onClick={handleDeliverd} variant="light ">
-
-              Deliverd
-            </Button>
+              <Card.Title>
+                {" "}
+                <span className="text-white fw-bold">
+                  {products?.name}
+                </span>{" "}
+              </Card.Title>
+              <Card.Text>
+                {" "}
+                <span className="text-white">
+                  {products.description?.slice(0, 100)}
+                </span>{" "}
+              </Card.Text>
+              <Card.Text>
+                {" "}
+                <span className="text-white">
+                  Price : {products?.price}
+                </span>{" "}
+              </Card.Text>
+              <Card.Text>
+                {" "}
+                <span className="text-white">
+                  Quantity : {products?.quantity}
+                </span>{" "}
+              </Card.Text>
+              <Card.Text>
+                {" "}
+                <span className="text-white">
+                  Supliarname : {products?.supliarname}
+                </span>{" "}
+              </Card.Text>
+              <Button
+                className="w-100"
+                onClick={handleDeliverd}
+                variant="light "
+              >
+                Deliverd
+              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -100,10 +128,18 @@ const Inventory = () => {
           <h5 className="text-secondary my-3 text-center">
             Update Quantity <br /> _______
           </h5>
-         <div className="w-50 mx-auto"> <img className="img-fluid" src={updateImg} alt="" /></div>
+          <div className="w-50 mx-auto">
+            {" "}
+            <img className="img-fluid" src={updateImg} alt="" />
+          </div>
           <form onSubmit={handleUpdateQuantity}>
             <div class="form-group">
-              <input placeholder="Enter Your Quantity" type="number" class="form-control" name="quantity" />
+              <input
+                placeholder="Enter Your Quantity"
+                type="number"
+                class="form-control"
+                name="quantity"
+              />
             </div>
             <button type="submit" class="btn btn-secondary mt-3">
               Update

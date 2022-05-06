@@ -1,8 +1,10 @@
+import axios from "axios";
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Loading from "../../Shared/Loading/Loading";
 import auth from "../firebase/firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
@@ -57,9 +59,14 @@ const Login = () => {
           }
         }
         
-        const handleCreateAccount = (e) =>{
+        const handleCreateAccount = async (e) =>{
+          const email = userInfo.email
           e.preventDefault()
-          signInWithEmailAndPassword(userInfo.email, userInfo.password)
+         await signInWithEmailAndPassword(email, userInfo.password)
+         const {data} = await axios.post('http://localhost:5000/login' , {email})
+         console.log(data);
+         localStorage.setItem('accessToken' , data.accessToken)
+         navigate(from, { replace: true });
          
 
         }
@@ -68,7 +75,7 @@ const Login = () => {
         let from = location.state?.from?.pathname || "/";
   
         if (user) {
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
         }
         useEffect(()=>{
           if(error){
@@ -79,6 +86,7 @@ const Login = () => {
         if(loading){
           return loading;
         }
+        
   return (
     <div>
       <form onSubmit={handleCreateAccount}>
@@ -106,6 +114,7 @@ const Login = () => {
                   className="input-text"
                   onChange={handlePassword}
                   name="password"
+                  type="password"
                 />
                  {errors?.password && (
                   <p className="text-danger my-3 fw-bold">{errors?.password}</p>
