@@ -9,9 +9,9 @@ const ShowProducts = ({ product }) => {
     <div>
       
       <Col>
-      <Card className="border-0 shadow-lg">
+      <Card className="border-0 shadow-lg p-3">
         <Card.Img height={ 300} variant="top" src={img} />
-        <Card.Body className="shadow-lg bg-secondary  " >
+        <Card.Body className="shadow-lg bg-secondary rounded " >
           <Card.Title> <span className="text-secondary fw-bold">{name}</span> </Card.Title>
           <Card.Text>
             <span className="text-white">{description.slice(0,80)}..</span>

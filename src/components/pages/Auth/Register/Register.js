@@ -12,7 +12,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
   const [updateProfille, updating, profileError] = useUpdateProfile(auth);
 
   const [showPassword, setShowPassword] = useState(false);

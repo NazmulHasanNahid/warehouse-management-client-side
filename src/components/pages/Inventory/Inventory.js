@@ -76,27 +76,27 @@ const Inventory = () => {
       </h2>
       <Row xs={1} md={2} className="g-4">
         <Col>
-          <Card className="border-0  shadow-lg">
+          <Card className="border-0  shadow-lg p-3 rounded">
             <Card.Img
               height={400}
               className=" img-fuild "
               variant="top"
               src={products?.img}
             />
-            <Card.Body className="shadow-lg ">
-              <Card.Title> <span className="text-secondary fw-bold">{products?.name}</span> </Card.Title>
-              <Card.Text> <span className="text-secondary">{products.description?.slice(0, 100)}</span> </Card.Text>
-              <Card.Text> <span className="text-secondary">Price : {products?.price}</span> </Card.Text>
-              <Card.Text> <span className="text-secondary">Quantity : {products?.quantity}</span> </Card.Text>
-              <Card.Text> <span className="text-secondary">Supliarname : {products?.supliarname}</span> </Card.Text>
-            </Card.Body>
+            <Card.Body className="shadow-lg bg-secondary rounded">
+              <Card.Title> <span className="text-white fw-bold">{products?.name}</span> </Card.Title>
+              <Card.Text> <span className="text-white">{products.description?.slice(0, 100)}</span> </Card.Text>
+              <Card.Text> <span className="text-white">Price : {products?.price}</span> </Card.Text>
+              <Card.Text> <span className="text-white">Quantity : {products?.quantity}</span> </Card.Text>
+              <Card.Text> <span className="text-white">Supliarname : {products?.supliarname}</span> </Card.Text>
+            <Button className="w-100" onClick={handleDeliverd} variant="light ">
 
-            <Button onClick={handleDeliverd} variant="secondary ">
               Deliverd
             </Button>
+            </Card.Body>
           </Card>
         </Col>
-        <Col className="shadow-lg">
+        <Col className="shadow-lg rounded">
           <h5 className="text-secondary my-3 text-center">
             Update Quantity <br /> _______
           </h5>
