@@ -76,6 +76,9 @@ const Login = () => {
             
           }
         },[error])
+        if(loading){
+          return loading;
+        }
   return (
     <div>
       <form onSubmit={handleCreateAccount}>

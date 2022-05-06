@@ -12,9 +12,9 @@ const ShowProducts = ({ product }) => {
       <Card className="border-0 shadow-lg p-3">
         <Card.Img height={ 300} variant="top" src={img} />
         <Card.Body className="shadow-lg bg-secondary rounded " >
-          <Card.Title> <span className="text-secondary fw-bold">{name}</span> </Card.Title>
+          <Card.Title> <span className="text-white fw-bold">{name.slice(0,40)}</span> </Card.Title>
           <Card.Text>
-            <span className="text-white">{description.slice(0,80)}..</span>
+            <span className="text-white">{description.slice(0,70)}..</span>
           </Card.Text>
           <Card.Text>
           <span className="text-white">Price : {price}</span>

@@ -30,7 +30,7 @@ function App() {
        <Route path="/manageItem" element={<ManageItem/>}/>
        <Route path="/myItem" element={<MyItem/>}/>
        <Route path="/blog" element={<Blog/>}/>
-       <Route path="/allCategories" element={<AllCategories/>}/>
+       <Route path="/allCategories" element={<RequireAuth><AllCategories/></RequireAuth>}/>
        <Route path="/addCategory" element={<AddCategory/>}/>
        <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
        <Route path="/allProducts" element={<AllProducts/>}/>

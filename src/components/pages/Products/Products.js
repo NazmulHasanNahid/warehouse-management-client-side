@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import useProducts from '../../hooks/useProducts';
+import auth from '../Auth/firebase/firebase.init';
 import ShowProducts from './ShowProducts';
 
 const Products = () => {
+     const [user, loading, error] = useAuthState(auth);
+
      const [products , setProducts] = useProducts([])
      return (
           <div>
