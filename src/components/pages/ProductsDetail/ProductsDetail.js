@@ -1,4 +1,4 @@
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container } from 'react-bootstrap';
 import React from 'react';
 import { Col, Row } from "react-bootstrap";
 import {
@@ -52,7 +52,10 @@ const ProductsDetail = () => {
         ];
       
      return (
-          <div className='container '>
+          <div>
+            <Container>
+
+            
             <div className='border  text-center shadow-lg p-3 my-5'>
           <p className='text-center my-3 text-secondary fw-bold'>Stock Summary</p> <hr />
 
@@ -85,7 +88,7 @@ const ProductsDetail = () => {
          
             </div>
 
-
+            </Container>
           </div>
      );
 };

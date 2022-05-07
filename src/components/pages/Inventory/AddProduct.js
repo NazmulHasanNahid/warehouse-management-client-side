@@ -27,7 +27,7 @@ const AddProduct = () => {
 
   return (
     <div className="w-50 mx-auto mt-5">
-      <h3 className="text-center fw-bold text-secondary">Add Products</h3>
+      <h3 className="text-center fw-bold text-secondary">Add Item</h3>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2"
