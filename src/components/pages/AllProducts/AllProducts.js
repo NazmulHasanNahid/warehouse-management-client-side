@@ -2,6 +2,7 @@ import { Button, Row, Table } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
+import './AllProducts.css'
 
 const AllProducts = () => {
   const [products, setProducts] = useProducts();
@@ -26,8 +27,8 @@ const AllProducts = () => {
   return (
     <div>
       <h5  className="text-center fw-bold text-secondary my-5">Manage Inventory <br /> ______</h5>
-      <div className="container">
-        <Table striped bordered hover size="sm">
+      <div className="container custom-table">
+        <Table striped bordered hover size="sm" >
           <thead>
             <tr>
               <th className="text-center text-secondary">Products Name</th>

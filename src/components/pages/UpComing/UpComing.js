@@ -57,14 +57,14 @@ const UpComing = () => {
     <div>
       <Container className="text-center my-5 ">
         <h5 className="fw-bold text-secondary">
-          Upcoming Item <br /> ____
+          Upcoming Items <br /> ____
         </h5>
         <Slider {...settings}>
           <div>
             <Row className="text-center justify-content-center mt-3">
               <Col lg={6} md={6} sm={12} >
                 <Row >
-                  <Col className="" lg={4} md={4} sm={12}>
+                  <Col className=" " lg={4} md={4} sm={12}>
                     <img className="circleImg" src={laptop} alt="" />
                   </Col>
                   <Col lg={4} md={4} sm={12}>
