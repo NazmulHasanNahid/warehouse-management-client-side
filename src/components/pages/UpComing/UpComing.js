@@ -16,8 +16,10 @@ import rotimaker from "../../../img/upcoming/rotimaker.jpg";
 
 const UpComing = () => {
   var settings = {
-    autoPlay: true,
-    autoPlaySpeed: 2000,
+    
+    autoplay: true,
+    cssEase: "linear",
+    autoplaySpeed: 3000,
     dots: true,
     infinite: true,
     speed: 1000,
