@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import updateImg from "../../../img/update.png";
+import Loading from "../Shared/Loading/Loading";
 
 const Inventory = () => {
   const { id } = useParams();
@@ -69,6 +70,7 @@ const Inventory = () => {
     }
   };
 
+ 
   return (
     <div className="container ">
       <h2 className="text-center fw-bold my-5 text-secondary">

@@ -6,12 +6,14 @@ import { toast } from 'react-toastify';
 import auth from '../Auth/firebase/firebase.init';
 import { signOut } from "firebase/auth";
 import axiosPrivate from '../../../api/axiosPrivate';
+import Loading from '../Shared/Loading/Loading';
 
 
 const MyItem = () => {
      const navigate = useNavigate()
      const [user, loading, error] = useAuthState(auth);
      const [items , setItems] = useState([])
+     
      useEffect(()=>{
           const getItems = async () =>{
                const email = user.email;
@@ -32,6 +34,9 @@ const MyItem = () => {
           getItems()
           
      },[user])
+     if(loading){
+      return <Loading/>
+    }
      const handleDelet = (id) => {
           const proceed = window.confirm("Are you sure you want to delet");
           if (proceed) {
@@ -53,13 +58,14 @@ const MyItem = () => {
      return (
           <div className='container my-3'>
               <h4 className='text-secondary fw-bold text-center my-3'>My items {items.length}</h4> 
-              <div className=''>
+              <div className='custom-table'>
                    
 
 <Table striped bordered hover size="sm">
           <thead>
             <tr>
               <th className="text-center text-secondary">Products Name</th>
+              <th className="text-center text-secondary">Img</th>
               <th className="text-center text-secondary">Price</th>
               <th className="text-center text-secondary">Delete</th>
             </tr>
@@ -68,6 +74,7 @@ const MyItem = () => {
             {items.map((item) => (
               <tr key={item._id}>
                 <td className="text-center">{item.name}</td>
+                <td className="text-center"><img className="img-fluid" width="40px"   src={item.img} alt="" /></td>
                 <td className="text-center">{item.price}</td>
                 <td>
                   {" "}

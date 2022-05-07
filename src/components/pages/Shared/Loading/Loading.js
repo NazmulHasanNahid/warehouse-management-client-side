@@ -7,7 +7,10 @@ const Loading = () => {
      style={{ height: "300px" }}
      className="w-100 d-flex justify-content-center align-items-center"
    >
-     <Spinner animation="border" variant="primary" />
+     
+     <Spinner animation="border" variant="secondary" />
+
+
    </div> 
   );
 };

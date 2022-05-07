@@ -2,10 +2,14 @@ import { Button, Row, Table } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
+import Loading from "../Shared/Loading/Loading";
 import './AllProducts.css'
 
 const AllProducts = () => {
   const [products, setProducts] = useProducts();
+  if(products.length === 0){
+    return <Loading/>
+}
   const handleDelet = (id) => {
     const proceed = window.confirm("Are you sure you want to delet");
     if (proceed) {
@@ -28,6 +32,7 @@ const AllProducts = () => {
     <div>
       <h5  className="text-center fw-bold text-secondary my-5">Manage Inventory <br /> ______</h5>
       <div className="container custom-table">
+       
         <Table striped bordered hover size="sm" >
           <thead>
             <tr>

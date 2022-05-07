@@ -24,7 +24,15 @@ const Blog = () => {
             for Python, Java, PHP, C#, C++, Go, and other languages are
             examples. So, if you want to create a standalone application or a
             server in If you want to utilize nodejs instead of Javascript, you
-            can do so.on the other hand If your application requires the capacity to store data in a durable manner so that it can be efficiently queried or updated later, you'll almost certainly need to employ a data base. There are a plethora of well-known databases to choose from. One of these databases is MongoDB. Other database options include MariaDB, MySql, CouchDB, DynamoDB (on AWS), and Postgres. Distinct databases have different strengths (things they excel at) and separate methods of being used, therefore selecting the right/best database for your needs is a very different topic.
+            can do so.on the other hand If your application requires the
+            capacity to store data in a durable manner so that it can be
+            efficiently queried or updated later, you'll almost certainly need
+            to employ a data base. There are a plethora of well-known databases
+            to choose from. One of these databases is MongoDB. Other database
+            options include MariaDB, MySql, CouchDB, DynamoDB (on AWS), and
+            Postgres. Distinct databases have different strengths (things they
+            excel at) and separate methods of being used, therefore selecting
+            the right/best database for your needs is a very different topic.
           </p>
           <br />
         </Col>
@@ -39,10 +47,13 @@ const Blog = () => {
           <br />
           <h5>4.What is the purpose of jwt and how does it work</h5>
           <p>
-            Ans :First Of All Authentication Means veryfying who some one is , i
-            mean who are you whats your account is real or fake and you i mean
-            user is real or fake and second of all authorization means veryfying
-            whats specific applications, filses data and etc.
+            Ans : Jwt Means Json Web Token , basically jwt used for varyfying
+            user or genaret a token suppose you have a website and you are the
+            admin of this website now you can add data delete data you can do
+            each and everything , now if some one try to become a admin of this
+            site he can't do this if your site has jwt emplementaion cause jwt
+            send you a token without this token no one can access your site this
+            is the use case of jwt .
           </p>
         </Col>
       </Row>

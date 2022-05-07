@@ -3,12 +3,16 @@ import { Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import useProducts from '../../hooks/useProducts';
 import auth from '../Auth/firebase/firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import ShowProducts from './ShowProducts';
 
 const Products = () => {
      const [user, loading, error] = useAuthState(auth);
 
-     const [products , setProducts] = useProducts([])
+     const [products , setProducts] = useProducts()
+     if(products.length === 0){
+          return <Loading/>
+     }
      return (
           <div>
                <h2 className='text-center text-secondary fw-bold  my-5'>Products <br /> ____</h2>
