@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
 import Loading from "../Shared/Loading/Loading";
 import './AllProducts.css'
+import Zoom from 'react-reveal/Zoom';
 
 const AllProducts = () => {
   const [products, setProducts] = useProducts();
@@ -32,7 +33,7 @@ const AllProducts = () => {
     <div>
       <h5  className="text-center fw-bold text-secondary my-5">Manage Inventory <br /> ______</h5>
       <div className="container custom-table">
-       
+       <Zoom>
         <Table striped bordered hover size="sm" >
           <thead>
             <tr>
@@ -66,6 +67,7 @@ const AllProducts = () => {
           </tbody>
           
         </Table>
+        </Zoom>
         <div className="text-center">
         <Link to="/addItem">
               <Button variant="secondary" >Add New Item</Button>

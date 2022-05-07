@@ -4,9 +4,13 @@ import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useCategories from '../../hooks/useCategories';
 import ShowAllCategories from './ShowAllCategories';
+import Loading from '../Shared/Loading/Loading';
 
 const AllCategories = () => {
      const [categories , setCategories] = useCategories()
+     if(categories.length === 0){
+          return <Loading/>
+     }
 
      return (
           <div> 

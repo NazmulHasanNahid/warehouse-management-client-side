@@ -1,11 +1,13 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Zoom from 'react-reveal/Zoom';
 
 const ShowCategories = ({categorie}) => {
      const {name , image} = categorie
      return (
           <div>
+          <Zoom>
           <Col>
             <div
               class="
@@ -15,6 +17,7 @@ const ShowCategories = ({categorie}) => {
             </div>
             
           </Col>
+          </Zoom>
           
          
           </div>

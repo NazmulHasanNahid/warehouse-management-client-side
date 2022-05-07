@@ -1,4 +1,6 @@
 import { Carousel } from "react-bootstrap";
+import Fade from 'react-reveal/Fade';
+
 import React from "react";
 import img1 from "../../../img/banner1.jpg";
 import img2 from "../../../img/banner2.jpg";
@@ -10,6 +12,7 @@ import img5 from "../../../img/banner5.jpg";
 const Banner = () => {
   return (
     <div>
+       <Fade right>
       <Carousel>
         <Carousel.Item>
           <img className="d-block w-100" src={img1} alt="First slide" />
@@ -27,6 +30,7 @@ const Banner = () => {
           <img className="d-block w-100" src={img5} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
+      </Fade>
     </div>
   );
 };

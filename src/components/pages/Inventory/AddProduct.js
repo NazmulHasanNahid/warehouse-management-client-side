@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import auth from "../Auth/firebase/firebase.init";
+import Zoom from 'react-reveal/Zoom';
 const AddProduct = () => {
   const [user, loading, error] = useAuthState(auth);
 
@@ -27,6 +28,7 @@ const AddProduct = () => {
 
   return (
     <div className="w-50 mx-auto mt-5">
+      <Zoom>
       <h3 className="text-center fw-bold text-secondary">Add Item</h3>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -74,6 +76,7 @@ const AddProduct = () => {
         />
         <input type="submit" value="Add" />
       </form>
+      </Zoom>
     </div>
   );
 };

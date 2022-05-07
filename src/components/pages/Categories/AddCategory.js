@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import Zoom from 'react-reveal/Zoom';
+
 
 const AddCategory = () => {
   const { register, handleSubmit } = useForm();
@@ -23,7 +25,10 @@ const AddCategory = () => {
 
   return (
     <div className="w-50 mx-auto">
+      <Zoom>
       <h5 className="text-secondary text-center my-3">Add Category</h5>
+
+      
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2"
@@ -39,6 +44,7 @@ const AddCategory = () => {
         />
         <input type="submit" value="Add" />
       </form>
+      </Zoom>
     </div>
   );
 };

@@ -1,6 +1,10 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Roll from 'react-reveal/Roll';
+import Fade from 'react-reveal/Fade';
+
+
 
 
 const ShowProducts = ({ product }) => {
@@ -9,6 +13,7 @@ const ShowProducts = ({ product }) => {
     <div>
       
       <Col>
+      <Roll>  
       <Card className="border-0 shadow-lg p-3">
         <Card.Img height={ 300} variant="top" src={img} />
         <Card.Body className="shadow-lg bg-secondary rounded " >
@@ -33,6 +38,7 @@ const ShowProducts = ({ product }) => {
           
         </Card.Body>
       </Card>
+      </Roll>
     </Col>
      
     </div>
