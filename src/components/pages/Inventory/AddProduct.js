@@ -9,7 +9,7 @@ const AddProduct = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data ,e) => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://limitless-springs-85910.herokuapp.com/products`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -15,7 +15,7 @@ const MyItem = () => {
      useEffect(()=>{
           const getItems = async () =>{
                const email = user.email;
-               const url = `http://localhost:5000/userAddedItem?email=${email}`
+               const url = `https://limitless-springs-85910.herokuapp.com/userAddedItem?email=${email}`
               try{
                 const {data} = await axiosPrivate.get(url)
                 setItems(data)
@@ -35,7 +35,7 @@ const MyItem = () => {
      const handleDelet = (id) => {
           const proceed = window.confirm("Are you sure you want to delet");
           if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://limitless-springs-85910.herokuapp.com/product/${id}`;
             fetch(url, {
               method: "DELETE",
             })

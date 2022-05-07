@@ -10,7 +10,7 @@ const Inventory = () => {
   const [products, setProducts] = useState({});
   console.log(products);
   useEffect(() => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://limitless-springs-85910.herokuapp.com/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -24,7 +24,7 @@ const Inventory = () => {
       return alert("Quantity can not be less then zero");
     }
 
-    const url = `http://localhost:5000/quantity/${id}`;
+    const url = `https://limitless-springs-85910.herokuapp.com/quantity/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -47,7 +47,7 @@ const Inventory = () => {
     if (addQuantity > 0) {
       quantity = parseInt(quantity) + addQuantity;
       const updateInventory = { quantity };
-      const url = `http://localhost:5000/quantity/${id}`;
+      const url = `https://limitless-springs-85910.herokuapp.com/quantity/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {

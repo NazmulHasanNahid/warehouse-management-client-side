@@ -62,9 +62,9 @@ const UpComing = () => {
         <Slider {...settings}>
           <div>
             <Row className="text-center justify-content-center mt-3">
-              <Col lg={6} md={6} sm={12}>
-                <Row>
-                  <Col lg={4} md={4} sm={12}>
+              <Col lg={6} md={6} sm={12} >
+                <Row >
+                  <Col className="" lg={4} md={4} sm={12}>
                     <img className="circleImg" src={laptop} alt="" />
                   </Col>
                   <Col lg={4} md={4} sm={12}>

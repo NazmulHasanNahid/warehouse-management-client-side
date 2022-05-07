@@ -6,7 +6,7 @@ const AddCategory = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data, e) => {
-    const url = `http://localhost:5000/categories`;
+    const url = `https://limitless-springs-85910.herokuapp.com/categories`;
     fetch(url, {
       method: "POST",
       headers: {
