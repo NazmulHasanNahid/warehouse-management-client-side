@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
 import Loading from "../Shared/Loading/Loading";
-import './AllProducts.css'
+import './AllProducts.modules.css'
 import Zoom from 'react-reveal/Zoom';
 
 const AllProducts = () => {

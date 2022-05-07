@@ -15,6 +15,7 @@ const Categories = () => {
      return (
           <div className='container'>
                <h3 className='text-secondary my-3 fw-bold text-center my-5'>Categories <br /> _____</h3>
+              
             
             <Row xs={1} md={3}  className="g-4 container mx-auto" >
             {
