@@ -9,12 +9,13 @@ import auth from "../firebase/firebase.init";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
   const [updateProfille, updating, profileError] = useUpdateProfile(auth);
-
+ 
   const [showPassword, setShowPassword] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -41,7 +42,7 @@ const Register = () => {
     }
   };
   const handlePassword = (e) => {
-    // setPassword(e.target.value)
+   
     const passwordRegex = /.{6}/;
     const validPassword = passwordRegex.test(e.target.value);
     if (validPassword) {
@@ -63,6 +64,7 @@ const Register = () => {
       setUserInfo({ ...userInfo, confirmPassword: "" });
     }
   };
+  
   const createAccount = async (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
@@ -78,6 +80,9 @@ const Register = () => {
   let from = location.state?.from?.pathname || "/";
   if (user) {
     navigate(from, { replace: true });
+  }
+  if(loading){
+    return <Loading/>
   }
   return (
     <div>
