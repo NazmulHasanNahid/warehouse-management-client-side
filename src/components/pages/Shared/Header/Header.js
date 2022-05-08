@@ -17,7 +17,7 @@ const Header = () => {
     <div >
       <Navbar bg="light"  expand="lg">
         <Container>
-          <Navbar.Brand href="#home"> <img width="40px" src={logo} alt="" /> <span className="fw-bold text-secondary">Electronics</span> </Navbar.Brand>
+          <Navbar.Brand as={Link} to="/home"> <img width="40px" src={logo} alt="" /> <span className="fw-bold text-secondary">Electronics</span> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
