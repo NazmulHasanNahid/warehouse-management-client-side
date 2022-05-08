@@ -112,6 +112,7 @@ const Inventory = () => {
                 <form onSubmit={handleUpdateQuantity}>
                   <div className="form-group">
                     <input
+                      required
                       placeholder="Update Your Quantity"
                       type="number"
                       className="form-control"

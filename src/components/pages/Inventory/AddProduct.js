@@ -34,10 +34,12 @@ const AddProduct = () => {
         <input
           className="mb-2"
           placeholder="Name"
+          required
           {...register("name", { required: true})}
         />
         <input
           className="mb-2"
+          required
           placeholder="Email"
           readOnly
           value={user.email}
@@ -48,27 +50,32 @@ const AddProduct = () => {
        
         <input
           className="mb-2"
+          required
           placeholder="Quantity"
           {...register("quantity", { required: true})}
           type="number"
         />
         <input
           className="mb-2"
+          required
           placeholder="supliarname"
           {...register("supliarname", { required: true})}
         />
         <textarea
+          required
           className="mb-2"
           placeholder="Descreption"
           {...register("description")}
         />
         <input
+          required
           className="mb-2"
           placeholder="price"
           type="number"
           {...register("price")}
         />
         <input
+           required
           className="mb-2"
           placeholder="Photo Url"
           type="text"
