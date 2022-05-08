@@ -2,6 +2,9 @@ import { Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import Slide from 'react-reveal/Slide';
+
+
 
 const Inventory = () => {
   const { id } = useParams();
@@ -69,6 +72,7 @@ const Inventory = () => {
 
   return (
     <div className="container ">
+      <Slide top>
       <h2 className="text-center fw-bold my-5 text-secondary custom-underline">
         Inventory
       </h2>
@@ -128,6 +132,7 @@ const Inventory = () => {
           </div>
         </div>
       </div>
+      </Slide>
     </div>
   );
 };
