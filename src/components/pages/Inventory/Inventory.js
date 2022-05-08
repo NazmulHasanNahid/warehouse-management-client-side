@@ -1,9 +1,7 @@
 import { Button, Col, Row } from "react-bootstrap";
 import React, {  useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import updateImg from "../../../img/update.png";
 import Loading from "../Shared/Loading/Loading";
 
 const Inventory = () => {
@@ -76,20 +74,20 @@ const Inventory = () => {
       <h2 className="text-center fw-bold my-5 text-secondary">
         Manage Inventory <br /> ______{" "}
       </h2>
-       <div class="card mb-3 shadow-lg p-3 border-0">
-          <div class="row g-0 d-flex align-items-center">
-            <div class="col-md-4">
+       <div className="card mb-3 shadow-lg p-3 border-0">
+          <div className="row g-0 d-flex align-items-center">
+            <div className="col-md-4">
               <img src={products?.img} class="img-fluid" alt="..." />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title text-secondary fw-bold">{products?.name}</h5>
-                <p class="card-text text-secondary">
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title text-secondary fw-bold">{products?.name}</h5>
+                <p className="card-text text-secondary">
                   {products?.description?.slice(0, 70)}
                 </p>
-                <p class="card-text text-secondary">Price : $ {products?.price}</p>
-                <p class="card-text text-secondary">Quantity : {products?.quantity}</p>
-                <p class="card-text text-secondary">
+                <p className="card-text text-secondary">Price : $ {products?.price}</p>
+                <p className="card-text text-secondary">Quantity : {products?.quantity}</p>
+                <p className="card-text text-secondary">
                   Supliar Name : {products?.supliarname}
                 </p>
                 <p class="card-text text-secondary">
@@ -104,11 +102,11 @@ const Inventory = () => {
                 
                 <p className="card-text">
                 <form onSubmit={handleUpdateQuantity}>
-            <div class="form-group">
+            <div className="form-group">
               <input
                 placeholder="Enter Your Quantity"
                 type="number"
-                class="form-control"
+                className="form-control"
                 name="quantity"
               />
             </div>
