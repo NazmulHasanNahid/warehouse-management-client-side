@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Roll from "react-reveal/Roll";
-import Fade from "react-reveal/Fade";
 import "./Products.css";
 
 const ShowProducts = ({ product }) => {

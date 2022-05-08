@@ -14,7 +14,7 @@ const AllCategories = () => {
 
      return (
           <div> 
-               <h5 className='text-center fw-bold my-3 text-secondary'>All Categories <br /> _____</h5>
+               <h5 className='text-center fw-bold my-5 text-secondary custom-underline'>All Categories </h5>
              <Row xs={1} md={3}  className="g-4 container mx-auto" >
             {
                  categories.map(categorie => <ShowAllCategories key={categorie._id} categorie={categorie} ></ShowAllCategories>)

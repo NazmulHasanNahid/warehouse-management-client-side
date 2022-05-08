@@ -56,9 +56,7 @@ const UpComing = () => {
   return (
     <div>
       <Container className="text-center my-5 ">
-        <h5 className="fw-bold text-secondary">
-          Upcoming Items <br /> ____
-        </h5>
+        <h5 className="fw-bold text-secondary my-5 custom-underline">Upcoming Items </h5>
         <Slider {...settings}>
           <div>
             <Row className="text-center justify-content-center mt-3">

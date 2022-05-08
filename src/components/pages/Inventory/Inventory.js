@@ -72,7 +72,7 @@ const Inventory = () => {
   return (
     <div className="container ">
       <h2 className="text-center fw-bold my-5 text-secondary">
-        Manage Inventory <br /> ______{" "}
+        Inventory <br /> ______{" "}
       </h2>
        <div className="card mb-3 shadow-lg p-3 border-0">
           <div className="row g-0 d-flex align-items-center">

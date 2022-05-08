@@ -1,0 +1,16 @@
+.custom-underline{
+     text-decoration: none !important; 
+     position: relative !important; 
+}
+.custom-underline::after{
+     position: absolute !important;
+     content: '' !important;
+     border-bottom: 3px solid gray;
+     height: 2px !important;
+     bottom: -10px !important; 
+     margin: 0 auto !important;
+     left: 0 !important;
+     right: 0 !important;
+     width: 5% !important;
+     
+}
