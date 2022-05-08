@@ -29,7 +29,7 @@ const ShowProducts = ({ product }) => {
                 <p className="card-text text-secondary">
                   <Link to={`/inventory/${_id}`}>
                     <Button className="w-100" variant="secondary">
-                      Update
+                      Update Stock
                     </Button>
                   </Link>
                 </p>
