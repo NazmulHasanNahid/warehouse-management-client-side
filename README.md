@@ -11,6 +11,8 @@
 ### 6. This Web Site has categories section where you can see all type of category 
 
 ## Framwork I Used In This Project
+### React Js 
+### React Router Dom
 ### axios 
 ### react-toastify 
 ### react-slick 
