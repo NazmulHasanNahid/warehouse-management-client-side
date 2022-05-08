@@ -32,12 +32,14 @@ const AddCategory = () => {
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2"
+          required
           placeholder="Name"
           {...register("name", { required: true })}
         />
 
         <input
           className="mb-2"
+          required
           placeholder="Photo Url"
           type="text"
           {...register("image")}

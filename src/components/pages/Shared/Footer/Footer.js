@@ -10,7 +10,7 @@ import './Footer.css'
 const Footer = () => {
      return (
           <div className=''>
-                <div className='footer-bg mt-5 p-5'>
+                <div className='footer-bg bg-secondary mt-5 p-5'>
            <Row  xs={1} md={4} className="w-75 mx-auto container">
                 <Col>
                 <h5 className='fw-bold'>Information</h5>

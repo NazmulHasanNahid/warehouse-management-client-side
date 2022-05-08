@@ -64,7 +64,7 @@ const Inventory = () => {
         })
         .catch((err) => console.log(err));
     } else {
-      alert("please insert positive number of quantity");
+     toast('Please Enter A Positive Value')
       e.target.reset();
       return;
     }
@@ -102,7 +102,7 @@ const Inventory = () => {
                 <Button
                   className="w-100"
                   onClick={handleDeliverd}
-                  variant="light "
+                  variant="secondary "
                 >
                   Deliverd
                 </Button>
