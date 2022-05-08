@@ -76,65 +76,34 @@ const Inventory = () => {
       <h2 className="text-center fw-bold my-5 text-secondary">
         Manage Inventory <br /> ______{" "}
       </h2>
-      <Row xs={1} md={2} className="g-4">
-        <Col>
-          <Card className="border-0  shadow-lg p-3 rounded">
-            <Card.Img
-              height={400}
-              className=" img-fuild "
-              variant="top"
-              src={products?.img}
-            />
-            <Card.Body className="shadow-lg bg-secondary rounded">
-              <Card.Title>
-                {" "}
-                <span className="text-white fw-bold">
-                  {products?.name}
-                </span>{" "}
-              </Card.Title>
-              <Card.Text>
-                {" "}
-                <span className="text-white">
-                  {products.description?.slice(0, 100)}
-                </span>{" "}
-              </Card.Text>
-              <Card.Text>
-                {" "}
-                <span className="text-white">
-                  Price : {products?.price}
-                </span>{" "}
-              </Card.Text>
-              <Card.Text>
-                {" "}
-                <span className="text-white">
-                  Quantity : {products?.quantity}
-                </span>{" "}
-              </Card.Text>
-              <Card.Text>
-                {" "}
-                <span className="text-white">
-                  Supliarname : {products?.supliarname}
-                </span>{" "}
-              </Card.Text>
-              <Button
+       <div class="card mb-3 shadow-lg p-3 border-0">
+          <div class="row g-0 d-flex align-items-center">
+            <div class="col-md-4">
+              <img src={products?.img} class="img-fluid" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-secondary fw-bold">{products?.name}</h5>
+                <p class="card-text text-secondary">
+                  {products?.description?.slice(0, 70)}
+                </p>
+                <p class="card-text text-secondary">Price : $ {products?.price}</p>
+                <p class="card-text text-secondary">Quantity : {products?.quantity}</p>
+                <p class="card-text text-secondary">
+                  Supliar Name : {products?.supliarname}
+                </p>
+                <p class="card-text text-secondary">
+                <Button
                 className="w-100"
                 onClick={handleDeliverd}
                 variant="light "
               >
                 Deliverd
               </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className="shadow-lg rounded">
-          <h5 className="text-secondary my-3 text-center">
-            Update Quantity <br /> _______
-          </h5>
-          <div className="w-50 mx-auto">
-            {" "}
-            <img className="img-fluid" src={updateImg} alt="" />
-          </div>
-          <form onSubmit={handleUpdateQuantity}>
+                </p>
+                
+                <p className="card-text">
+                <form onSubmit={handleUpdateQuantity}>
             <div class="form-group">
               <input
                 placeholder="Enter Your Quantity"
@@ -147,13 +116,17 @@ const Inventory = () => {
               Update
             </button>
           </form>
-          <div className="my-3">
+                </p>
+                <p className="card-text"> 
+          
             <Link to="/allProducts">
               <Button variant="secondary">Manage Inventory</Button>
             </Link>
+                </p>
+              </div>
+            </div>
           </div>
-        </Col>
-      </Row>
+        </div>
     </div>
   );
 };
