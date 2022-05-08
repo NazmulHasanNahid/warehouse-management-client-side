@@ -31,7 +31,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      <h5  className="text-center fw-bold text-secondary my-5">Manage Inventory <br /> ______</h5>
+      <h5  className="text-center fw-bold text-secondary my-5 custom-underline">Manage Inventory </h5>
       <div className="container custom-table">
        <Zoom>
         <Table striped bordered hover size="sm" >

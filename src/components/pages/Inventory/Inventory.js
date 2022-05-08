@@ -1,8 +1,7 @@
-import { Button, Col, Row } from "react-bootstrap";
-import React, {  useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Loading from "../Shared/Loading/Loading";
 
 const Inventory = () => {
   const { id } = useParams();
@@ -68,63 +67,67 @@ const Inventory = () => {
     }
   };
 
- 
   return (
     <div className="container ">
-      <h2 className="text-center fw-bold my-5 text-secondary">
-        Inventory <br /> ______{" "}
+      <h2 className="text-center fw-bold my-5 text-secondary custom-underline">
+        Inventory
       </h2>
-       <div className="card mb-3 shadow-lg p-3 border-0">
-          <div className="row g-0 d-flex align-items-center">
-            <div className="col-md-4">
-              <img src={products?.img} class="img-fluid" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title text-secondary fw-bold">{products?.name}</h5>
-                <p className="card-text text-secondary">
-                  {products?.description?.slice(0, 70)}
-                </p>
-                <p className="card-text text-secondary">Price : $ {products?.price}</p>
-                <p className="card-text text-secondary">Quantity : {products?.quantity}</p>
-                <p className="card-text text-secondary">
-                  Supliar Name : {products?.supliarname}
-                </p>
-                <p class="card-text text-secondary">
+      <div className="card mb-3 shadow-lg p-3 border-0">
+        <div className="row g-0 d-flex align-items-center">
+          <div className="col-md-4">
+            <img src={products?.img} className="img-fluid" alt="..." />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title text-secondary fw-bold">
+                {products?.name}
+              </h5>
+              <p className="card-text text-secondary">
+                {products?.description?.slice(0, 70)}
+              </p>
+              <p className="card-text text-secondary">
+                Price : $ {products?.price}
+              </p>
+              <p className="card-text text-secondary">
+                Quantity : {products?.quantity}
+              </p>
+              <p className="card-text text-secondary">
+                Supliar Name : {products?.supliarname}
+              </p>
+              <p className="card-text text-secondary">
                 <Button
-                className="w-100"
-                onClick={handleDeliverd}
-                variant="light "
-              >
-                Deliverd
-              </Button>
-                </p>
-                
-                <p className="card-text">
+                  className="w-100"
+                  onClick={handleDeliverd}
+                  variant="light "
+                >
+                  Deliverd
+                </Button>
+              </p>
+
+              <p className="card-text">
                 <form onSubmit={handleUpdateQuantity}>
-            <div className="form-group">
-              <input
-                placeholder="Enter Your Quantity"
-                type="number"
-                className="form-control"
-                name="quantity"
-              />
-            </div>
-            <button type="submit" class="btn btn-secondary mt-3">
-              Update
-            </button>
-          </form>
-                </p>
-                <p className="card-text"> 
-          
-            <Link to="/allProducts">
-              <Button variant="secondary">Manage Inventory</Button>
-            </Link>
-                </p>
-              </div>
+                  <div className="form-group">
+                    <input
+                      placeholder="Update Your Quantity"
+                      type="number"
+                      className="form-control"
+                      name="quantity"
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-secondary mt-3">
+                    Update
+                  </button>
+                </form>
+              </p>
+              <p className="card-text">
+                <Link to="/allProducts">
+                  <Button variant="secondary">Manage Inventory</Button>
+                </Link>
+              </p>
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };

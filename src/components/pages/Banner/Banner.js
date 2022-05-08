@@ -11,8 +11,8 @@ import img5 from "../../../img/banner5.jpg";
 
 const Banner = () => {
   return (
-    <div>
-       <Fade right>
+    <div >
+       <Fade top>
       <Carousel>
         <Carousel.Item>
           <img className="d-block w-100" src={img1} alt="First slide" />
